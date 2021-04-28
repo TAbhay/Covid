@@ -1,0 +1,80 @@
+<% layout('layouts/boilerplate')%>
+<%  function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+%>
+<span class="d-block p-2  text-center  text-dark font-weight-bold display-3">World</span>
+
+<div class="d-flex m-3 flex-sm-row flex-column justify-content-around">
+    <div class="card">
+        <div class="card-body ">
+          <h1 class="card-title">Total Cases</h1>
+          
+          <h3 class="card-title "><%= numberWithCommas( world[0].TotalCases )%></h3>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title">Active Cases</h1>
+         <h3 class="card-title"><%= numberWithCommas( world[0].ActiveCases) %></h3>
+         </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title">Total Recovered</h1>
+         <h3 class="card-title"><%= numberWithCommas( world[0].TotalRecovered) %></h3>
+        </div>
+      </div>
+</div>
+<div class="d-flex  m-3 flex-sm-row flex-column justify-content-around">
+    <div class="card">
+        <div class="card-body">
+          <h1 class="card-title">New Cases</h1>
+         <h3 class="card-title"><%= numberWithCommas( world[0].NewCases) %></h3>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title">Total Deaths</h1>
+          <h3 class="card-title"><%= numberWithCommas( world[0].TotalDeaths) %></h3>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title">Recovery Rate</h1>
+         <h3 class="card-title"><%= world[0].Recovery_Proporation %> %</h3>
+        </div>
+      </div>
+</div> 
+
+<div id="piechart" class = " "style="width: 100vw; height: 400px;"></div> 
+
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+ <script type="text/javascript">
+   google.charts.load('current', {'packages':['corechart']});
+   google.charts.setOnLoadCallback(drawChart);
+   function drawChart() {
+     var ac = <%= world[0].ActiveCases %>;
+     var tr = <%= world[0].TotalRecovered%>;
+     var td = <%= world[0].TotalDeaths %>;
+     console.log(ac+tr+td);
+     var data = google.visualization.arrayToDataTable([
+       ['Task', 'Hours per Day'],    
+       ['Active Cases',   ac   ],
+       ['Recovered Cases', tr],
+       ['Total Deaths', td],
+       
+     ]);
+
+     var options = {
+       title: 'Covid Cases',
+       slices: {0: {color: 'blue'}, 1:{color: 'green'}, 2:{color: 'red'}},
+       is3D: true,
+     };
+
+     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+     chart.draw(data, options);
+   }
+ </script>
+ 

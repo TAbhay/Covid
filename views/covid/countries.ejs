@@ -1,0 +1,34 @@
+<% layout('layouts/boilerplate')%>
+<%  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+  %>
+            <h1 class="text-center text-lg-center ">Countries</h1>
+            <div class="container my-container container-fluid table-responsive">
+            <table id = "mytable"  class="table table-bordered table-dark  table-striped ">
+              <thead>
+                <th >Country</th>
+                <th >Total Cases</th>
+                <th >Active Cases</th>
+                <th >Total Recovered</th>
+                <th >Total Deaths</th>
+                <th >Population</th>
+              </thead>
+              <tbody>
+                <% for(let country of countries){ %>
+                  
+                <tr>
+                  <td><a href="/country/<%=country.Country%>" style="text-decoration: none;"><%= country.Country %></a></td>
+                  <td><%= numberWithCommas(country.TotalCases) %></td>
+                  <td><%= numberWithCommas(country.ActiveCases) %></td>
+                  <td><%= numberWithCommas(country.TotalRecovered) %></td>
+                  <td><%= numberWithCommas(country.TotalDeaths) %></td>
+                  <td><%= numberWithCommas(country.Population) %></td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+        </div>
+<script>
+  
+</script>  
