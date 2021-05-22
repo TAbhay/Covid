@@ -18,7 +18,7 @@
                 <% for(let country of countries){ %>
                   
                 <tr>
-                  <td><a href="/country/<%=country.Country%>" style="text-decoration: none;"><%= country.Country %></a></td>
+                  <td><a href="/country/<%=country.Country%>/<%=country.ThreeLetterSymbol%>" style="text-decoration: none;"><%= country.Country %></a></td>
                   <td><%= numberWithCommas(country.TotalCases) %></td>
                   <td><%= numberWithCommas(country.ActiveCases) %></td>
                   <td><%= numberWithCommas(country.TotalRecovered) %></td>

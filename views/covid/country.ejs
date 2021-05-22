@@ -1,1 +1,19 @@
 <% layout('layouts/boilerplate')%>
+<%  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+  %>
+            <h1 class="text-center text-lg-center "><%= country.Country %></h1>
+           
+                <tr>
+                  <td><a href="/country/<%=country.Country%>" style="text-decoration: none;"><%= country.Country %></a></td>
+                  <td><%= numberWithCommas(country.TotalCases) %></td>
+                  <td><%= numberWithCommas(country.ActiveCases) %></td>
+                  <td><%= numberWithCommas(country.TotalRecovered) %></td>
+                  <td><%= numberWithCommas(country.TotalDeaths) %></td>
+                  <td><%= numberWithCommas(country.Population) %></td>
+                </tr>
+    
+<script>
+  
+</script>  

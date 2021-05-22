@@ -42,7 +42,7 @@ exports.covidcountries = function(req, res){
     });
 };
 exports.covidbycountry = function(req, res){
-    var getURL = process.env.xurl + req.params.country;
+    var getURL = process.env.xurl + "/country-report-iso-based/"+ req.params.name+ "/" +req.params.iso;
    console.log(getURL);
     var myreq = unirest("GET", getURL);
     myreq.headers({
@@ -56,8 +56,9 @@ exports.covidbycountry = function(req, res){
             return;
         }
        var country = result.body;  
-      
-       res.render("covid/country.ejs",{ country});
+      // console.log(result.body);
+       //res.render("covid/country.ejs",{ country});
+       res.json(country);
     });
 };
 exports.covidbycontinents = function(req, res){
@@ -79,3 +80,4 @@ exports.covidbycontinents = function(req, res){
        res.render("covid/continents.ejs",{continents});
     });
 };
+

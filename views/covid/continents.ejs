@@ -1,0 +1,22 @@
+<% layout('layouts/boilerplate')%>
+
+                  
+    <tr>
+      <td><a href="/country/<%=country.Country%>/<%=country.ThreeLetterSymbol%>" style="text-decoration: none;"><%= country.Country %></a></td>
+      <td><%= numberWithCommas(country.TotalCases) %></td>
+      <td><%= numberWithCommas(country.ActiveCases) %></td>
+      <td><%= numberWithCommas(country.TotalRecovered) %></td>
+      <td><%= numberWithCommas(country.TotalDeaths) %></td>
+      <td><%= numberWithCommas(country.Population) %></td>
+    </tr>
+    <% } %>
+<div class="d-flex flex-column">
+    <% for(let country of countries){ %>
+      
+        <div class="d-flex d-flex-row card-continent">
+             <div class="card"></div>
+             <div class="card"></div>
+        </div>
+      
+    <% } %>
+</div>

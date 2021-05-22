@@ -1,12 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const {covidworld,covidcountries,covidbycountry,covidbycontinents} = require("../controllers/covid");
+const {covidworld,covidcountries,covidbycountry,covidbycontinents,contact} = require("../controllers/covid");
 
 router.get('/',function(req,res){
     res.render("covid/home.ejs");
 });
 router.get("/world",covidworld);
 router.get("/countries",covidcountries);
-router.get("/country/:country",covidbycountry);
+router.get("/country/:name/:iso",covidbycountry);
 router.get("/:continents",covidbycontinents);
+router.get("/contact",function(req,res){
+    res.render("covid/contact");
+});
 module.exports = router;

@@ -1,3 +1,7 @@
+.custom-main{
+    min-height: calc(100vh - 56px - 61px);
+}
+
 .custom-caraousel{
     height: 85vh;
     overflow-y: hidden;
@@ -5,6 +9,9 @@
 .custom-nav{
 
 
+}
+.custom-main{
+    height: calc(100% - 56px - 61px);
 }
 .my-container{
     height: 76vh;
@@ -36,3 +43,19 @@ body{
 .navbar-toggle .icon-bar {
     background-color: #fff;
 }
+
+#piechart{
+    width: 100vw;
+    height : 400px;
+}
+@media screen and (max-width: 600px) {
+    .card{
+        width: 94vw;
+        height: 20vh;
+        margin:5px;
+        background-color: #00f8ff;
+    }
+    #piechart{
+        margin-left: 30px;
+    }
+  }
