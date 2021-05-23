@@ -13,9 +13,9 @@ world.
 ```terminal
 $ git clone https://github.com/TAbhay/Covid
 $ npm i
-``` download
+``` 
 ## To run this code
-   ``` 
+   ```terminal 
    $ npm install all
 
    $ npm run nodemon
@@ -49,7 +49,7 @@ Get contacts data
    GET: http://localhost:8000/contact
 
 ## Deploy Server to [Heroku](https://dashboard.heroku.com/)
-``` terminal
+```terminal
 $ npm i -g heroku
 $ heroku login
 ```
