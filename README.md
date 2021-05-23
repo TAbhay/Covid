@@ -13,9 +13,9 @@ world.
 ```terminal
 $ git clone https://github.com/TAbhay/Covid
 $ npm i
-``` download
+``` 
 ## To run this code
-   ``` 
+   ```terminal 
    $ npm install all
 
    $ npm run nodemon
@@ -46,7 +46,8 @@ Get specific country data
     GET: http://localhost:8000/country/India/ind
 
 Get contacts data
-   GET: http://localhost:8000/contact
+
+    GET: http://localhost:8000/contact
 
 ## Deploy Server to [Heroku](https://dashboard.heroku.com/)
 ```terminal
@@ -57,9 +58,10 @@ $ heroku create
 $ npm run heroku:add <your-super-amazing-heroku-app>
 // remember to run this command in the root level, not the server level, so if you follow the documentation along, you may need to do `cd ..`
 $ pwd
-/Users/<your-name>/mern
+/Users/<your-name>/Covid
 $ npm run deploy:heroku
 ```
+
 ## BUGs or comments
 
 [Create new Issues](https://github.com/TAbhay/Covid/issues) (preferred)
