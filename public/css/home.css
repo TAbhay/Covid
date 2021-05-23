@@ -84,6 +84,7 @@ body{
 #piechart{
     width: 100vw;
     height : 400px;
+    background-color : transparent;
    
 }
 @media screen and (max-width: 600px) {
@@ -96,5 +97,6 @@ body{
     #piechart{
         margin-left: 30px;
         overflow-x:auto;
+        background-color : transparent;
     }
   }
