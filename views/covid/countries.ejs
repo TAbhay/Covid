@@ -7,7 +7,7 @@
             <div class="container my-container container-fluid table-responsive">
             <table id = "mytable"  class="table table-bordered table-dark  table-striped ">
               <thead>
-                <th >Country</th>
+                <th >Country (click)</th> 
                 <th >Total Cases</th>
                 <th >Active Cases</th>
                 <th >Total Recovered</th>
@@ -18,7 +18,7 @@
                 <% for(let country of countries){ %>
                   
                 <tr>
-                  <td><a href="/country/<%=country.Country%>/<%=country.ThreeLetterSymbol%>" style="text-decoration: none;"><%= country.Country %></a></td>
+                  <td ><a href="/country/<%=country.Country%>/<%=country.ThreeLetterSymbol%>" id="countryid" class="beforehover"><%= country.Country %></a></td>
                   <td><%= numberWithCommas(country.TotalCases) %></td>
                   <td><%= numberWithCommas(country.ActiveCases) %></td>
                   <td><%= numberWithCommas(country.TotalRecovered) %></td>
@@ -30,5 +30,9 @@
         </table>
         </div>
 <script>
-  
+    document.getElementById("countryid").addEventListener("mousemove"),function(){
+     document.querySelector("#countryid").classList.remove("beforehover");
+     document.querySelector("#countryid").classList.add("afterhover");
+  }
+
 </script>  

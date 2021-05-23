@@ -1,15 +1,12 @@
-.custom-main{
+
+custom-main{
     min-height: calc(100vh - 56px - 61px);
 }
-
 .custom-caraousel{
     height: 85vh;
     overflow-y: hidden;
 }
-.custom-nav{
 
-
-}
 .custom-main{
     height: calc(100% - 56px - 61px);
 }
@@ -20,10 +17,41 @@
     overflow-x: auto;
 
 }
+.my-card{
+    width: 100%;
+    height: 40vh;
+   
+}
+ul {
+    list-style-type: none;
+  }
+ul li{
+    font-size: 20px;
+    font-weight: bolder;
+    font-family:Roboto;
+    
+  }
+.spancard{
+    display: block;
+    width:50%;
+    float: left;
+  }
+.my-flag{
+      display: block;
+      margin:auto auto ;
+      margin-top: 50px;
+      width : 50%;
+      height : 45%;
+  }
+#piechart2{
+    height: 400px;
+    width:100vw;
+  }
 thead tr:nth-child(1) th{background: rgb(181, 237, 247); color:black;position: sticky;top: 0;z-index: 10;}
 .footer{
     text-align: right;
 }
+
 .custom-search{
     padding-right: 20px;
 }
@@ -43,10 +71,20 @@ body{
 .navbar-toggle .icon-bar {
     background-color: #fff;
 }
-
+.beforehover{
+    text-decoration: none; 
+    color:white ; 
+    font-weight: bolder;
+}
+.afterhover{
+    color : rgb(17, 235, 71);
+    text-decoration: none;
+    font-size: 20px;
+}
 #piechart{
     width: 100vw;
     height : 400px;
+   
 }
 @media screen and (max-width: 600px) {
     .card{
@@ -57,5 +95,6 @@ body{
     }
     #piechart{
         margin-left: 30px;
+        overflow-x:auto;
     }
   }
