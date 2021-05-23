@@ -24,7 +24,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.use(getRoutes);
 //app.use(getroutes);
-const port = process.env.port || 27017;
+const port = process.env.port || 8000;
 app.listen(port, function () {
   console.log(`Server Listening on http://localhost:${port}`);
 });
