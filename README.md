@@ -46,7 +46,8 @@ Get specific country data
     GET: http://localhost:8000/country/India/ind
 
 Get contacts data
-   GET: http://localhost:8000/contact
+
+    GET: http://localhost:8000/contact
 
 ## Deploy Server to [Heroku](https://dashboard.heroku.com/)
 ```terminal
